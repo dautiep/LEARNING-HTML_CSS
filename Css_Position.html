@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position</title>
+    <style>
+        /*
+        Relative
+        - Lấy chính nó làm gốc tọa độ, và nó không bị phụ thuộc vào một đối tượng nào khác
+        - Khi sử dụng postition: ... thì mới sử dụng được các thuộc tính top, left, bottom, right
+
+        Absolute
+        - Lấy thẻ cha gần nhất có thuộc tính position làm gốc tọa độ và phụ thuộc vào nó
+
+        Fixed
+        - Lấy cửa sổ trình duyệt làm gốc tọa độ (phụ thuộc vào cửa sổ trình duyệt)
+        */
+        html, body {
+            margin: 0;
+        }
+
+        h1 {
+            position: relative;
+            top: 50px;
+        }
+
+        .header {
+            width: 100%;
+            height: 42px;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+
+        }
+
+        .box {
+            width: 100%;
+            height: 100px;
+            background-color: #333;
+            position: relative;
+            top: 50px;
+
+        }
+
+        /*ứng dụng làm một lớp phủ mờ lên thẻ cha*/
+        .box-child {
+            background-color: rgba(255, 255, 255, 0.5);
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        ul {
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="box">
+        Box cha
+        <div class="box-child"></div>
+    </div>
+    <h1>Position</h1>
+    <ul>
+        <li>Relative</li>
+        <li>Absolute</li>
+        <li>Fixed</li>
+        <li>Sticky</li>
+    </ul>
+</body>
+</html>

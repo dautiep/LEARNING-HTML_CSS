@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box-sizing</title>
+    <style>
+        /*Box-sizing là một thuộc tính căn cứ vào chiều rộng của phần tử để xét nộ dung bên trong của nó một cách thích họp mà không thay đổi kích thước của 
+        phần tử trước đó. Nhưng nếu cố tình set kích thước của padding/border quá lớn thì hiệu quả này sẽ không chính xác
+        Một số thuộc tính của box-sizing:
+        - box-sizing: border-box: xét content hợp lý (căn giữa)
+        - box-sizing: content-box trở lại trạng thái ban đầu
+        - box-sizing: unset hủy box-sizing: border-box
+        */
+
+        html,body {
+            margin: 0;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            color: #fff;
+            background-color: darkorchid;
+            padding: 16px;
+            border: 2px solid #333;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Đây là nội dung bài viết</div>
+</body>
+</html>

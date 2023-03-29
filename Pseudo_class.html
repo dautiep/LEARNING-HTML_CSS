@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Class</title>
+</head>
+<style>
+    /*Danh sách các lớp giả (pseudo classes)
+    - :root : tham chiếu tới thẻ cha bao trùm toạn bộ nội dung html (<html></html>)
+    - :hover : tham chiếu css tới sự kiện khi rê chuột vào đối tượng
+    - :active : tham chiếu css tới sự kiện khi click chuột vào đối tương, thả chuột ra thì sự kiện biến mất
+    - :first-child : tham chiếu css tới con đầu tiên
+    - :last-child: tham chiếu css tới con cuối cùng
+    
+    Danh sách các thuộc tính giả (pseudo elements)
+    - ::before : tạo một element giả đầu của đối tượng chính
+    - ::after : tạo một element giả sau của đối tượng chính
+    - ::first-letter : css cho ký tự đầu tiên của đối tượng chính
+    - ::first-line : css cho dòng đầu tiên của đối tượng chính
+    - ::selection : css cho phần được chọn (bôi đen) của đối tượng chính. Chỉ có một số thuộc tính css khả dụng với ::selection là color, background, cursor 
+    và outline*/
+
+    html,body {
+        margin: 0;
+    }
+
+    h1:active {
+        color: red;
+    }
+
+    h1::first-letter {
+        font-size: 50px;
+    }
+
+    h1::first-line {
+        font-style: italic;
+    }
+
+    h1::selection {
+        background-color: violet;
+    }
+    
+    .box {
+        width: 100%;
+        height: 120px;
+        background: rgb(190, 124, 157);
+    }
+
+    .box:active {
+        background-color: #333;
+    }
+
+    .box::before {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+    }
+
+    .box::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+    }
+
+    li:first-child {
+        color: cyan;
+    }
+
+    li:last-child {
+        color: blue;
+    }
+</style>
+<body>
+    <div class="box"></div>
+    <h1>CSS pseudo-classes <br> Dòng thứ 2</h1>
+    <ul>
+        <li>:root</li>
+        <li>:hover</li>
+        <li>:active</li>
+        <li>:first-child</li>
+        <li>:last-child</li>
+    </ul>
+</body>
+</html>
