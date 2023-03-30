@@ -399,7 +399,6 @@
     height: 40px;
     flex: 1;
     border-radius: 2px; 
-    padding: 0 0 0 8px;
     display: flex; 
     align-items: center;
 }
@@ -415,8 +414,14 @@
     margin-top: 6px;
 }
 
-.header__search-input {
+.header__search-input-wrap {
     flex: 1;
+    height: 100%;
+    position: relative;
+}
+
+.header__search-input {
+    width: 100%;
     height: 100%;
     outline: none;
     border: none;
@@ -450,7 +455,7 @@
     background-color: var(--primary-color);
     border: none;
     height: 34px;
-    border-radius: 3px;
+    border-radius: 2px;
     margin-right: 3px;
     width: 60px;
     outline: none;
@@ -470,14 +475,14 @@
     background-color: var(--white-color);
     position: absolute;
     right: 0;
-    top: 100%;
+    top: calc(100% + 1px);
     list-style: none;
     width: 130px;
     box-shadow: 0 1px 2px #e0e0e0;
     padding-left: 0;
-    border-radius: 3px;
     animation: fadeIn ease-in 0.2s;
     display: none;
+    border-radius: 2px;
 }
 
 .header__search-option::before {
@@ -489,6 +494,7 @@
     top: -10px;
 }
 
+/*.header__search-option là con của header__search-select*/
 .header__search-select:hover .header__search-option {
     display: block;
 }
@@ -496,6 +502,16 @@
 .header__search-option-item {
     padding: 8px 8px;
     cursor: pointer;
+}
+
+.header__search-option-item:first-child {
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+}
+
+.header__search-option-item:last-child {
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
 }
 
 .header__search-option-item:hover {
@@ -517,5 +533,54 @@
 
 .header__search-option-item--active i {
     display: inline-block;
+}
+
+/*Css for search history*/
+.header__search-history {
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0;
+    width: calc(100% - 16px);
+    background-color: var(--white-color);
+    border-radius: 2px;
+    box-shadow: 0 1px 5px rgb(189, 189, 189);
+    display: none;
+    overflow: hidden;
+}
+
+.header__search-history-heading {
+    margin: 6px 12px;
+    font-size: 1.4rem;
+    color: #999;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.header__search-history-list {
+    padding-left: 0;
+    list-style: none;
+    margin: 6px 0 0;
+}
+
+.header__search-history-item {
+    padding: 0 12px;
+    height: 38px;
+}
+
+.header__search-history-item:hover {
+    background-color: #fafafa;
+}
+
+.header__search-history-item a {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    line-height: 38px;
+    display: block; /*thẻ a mặc định không có display: block Nên thêm thuộc tính này vào để nó kế thừa toàn bộ kích thước thẻ cha*/
+}
+
+/*header__search-history không phải là con của header__search-input mà chỉ là elemnt đứng sau nên mới dùng ~*/
+.header__search-input:focus ~ .header__search-history {
+    display: block;
 }
 
