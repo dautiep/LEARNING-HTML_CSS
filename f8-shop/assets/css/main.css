@@ -6,13 +6,13 @@
 .navbar {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
 }
 
 .navbar__list {
     list-style: none; /*Loại bỏ dấu chấm trước mỗi li*/
     padding-left: 0;
-    margin: 0;
+    margin: 4px 0 0 0;
 }
 
 .navbar__item {
@@ -402,6 +402,7 @@
     border-radius: 2px; 
     display: flex; 
     align-items: center;
+    position: relative;
 }
 
 .header__cart {
@@ -591,6 +592,7 @@
     box-shadow: 0 1px 5px rgb(189, 189, 189);
     display: none;
     overflow: hidden;
+    z-index: 1;
 }
 
 .header__search-history-heading {
@@ -632,10 +634,11 @@
 /*css for header menu*/
 .header__menu {
     height: var(--header-menu-height);
-    width: 850px;
-    margin-left: 200px;
+    width: 100%;
     display: flex;
     align-items: center;
+    position: absolute;
+    top: 114%;
 }
 
 .header__menu-list {
