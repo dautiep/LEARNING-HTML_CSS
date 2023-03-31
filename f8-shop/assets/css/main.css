@@ -6,12 +6,13 @@
 .navbar {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 16px;
 }
 
 .navbar__list {
     list-style: none; /*Loại bỏ dấu chấm trước mỗi li*/
     padding-left: 0;
-    margin: 4px 0 0 0;
+    margin: 0;
 }
 
 .navbar__item {
@@ -406,6 +407,50 @@
 .header__cart {
     width: 150px;
     text-align: center;
+    position: relative;
+}
+
+.header__cart:hover .header__cart-list {
+    display: block;
+}
+
+.header__cart-list {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 50px;
+    background-color: var(--white-color);
+    width: 400px;
+    border-radius: 2px;
+    box-shadow: 0 1px 3.125rem 0 rgba(0, 0, 0, 0.2);
+    transform-origin: calc(100% - 20px) top; /*set cho việc transform ở góc trên cách một khoảng calc(100% - 20px)*/
+    animation: navbarNotifyGrowth ease-in 0.2s;
+    will-change: opacity, transform;
+    display: none;
+}
+
+.header__cart-list::before {
+    content: '';
+    border-style: solid;
+    border-width: 20px 27px;
+    border-color: transparent transparent var(--white-color) transparent;
+    position: absolute;
+    right: -2px;
+    top: -29px;
+}
+
+.header__cart--no-cart-img {
+    width: 54%;
+}
+
+.header__cart--no-cart {
+    padding: 24px 0;
+}
+
+.header__cart--no-cart-msg {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-top: 14px;
 }
 
 .header__cart-icon {
@@ -582,5 +627,37 @@
 /*header__search-history không phải là con của header__search-input mà chỉ là elemnt đứng sau nên mới dùng ~*/
 .header__search-input:focus ~ .header__search-history {
     display: block;
+}
+
+/*css for header menu*/
+.header__menu {
+    height: var(--header-menu-height);
+    width: 850px;
+    margin-left: 200px;
+    display: flex;
+    align-items: center;
+}
+
+.header__menu-list {
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+    margin: 0;
+}
+
+.header__menu-item {
+    margin-left: 16px;
+}
+
+.header__menu-item:first-child {
+    margin-left: 0;
+}
+
+
+.header__menu-item-link {
+    font-size: 1.28rem;
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: 300;
 }
 
