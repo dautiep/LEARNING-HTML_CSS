@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Attribute funciton</title>
+    <style>
+        html, body {
+            margin: 0;
+        }
+
+        /*attr function là mọt function cho phép lấy giá trị của một thuộc tính trong thẻ để sử dụng vào css.
+        Ở ví dụ dưới, chúng ta tạo một lớp giả after cho thẻ a. Thêm sau chữ 'Nhấn vào đây' giá trị của thuộc tính href là: " (https://google.com.vn)"*/
+        a::after {
+            content: " (" attr(href) ")";
+        }
+    </style>
+</head>
+<body>
+    <a href="https://google.com.vn">Nhấn vào đây nha</a>
+</body>
+</html>
