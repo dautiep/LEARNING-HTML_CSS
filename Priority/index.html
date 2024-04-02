@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priority</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        #heading-id {
+            color: orange; /*độ ưu tiên: id-100*/
+        }
+        #heading-id.heading-class {
+            color: red; /*độ ưu tiên: id-100 + class-10 = 110*/
+        }
+        .heading-class {
+            color: gray;
+        }
+        h1 {
+            color: blue
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="heading-id" class="heading-class">Priority?</h1>
+        <ol>
+            
+            <!-- không thằng nào được ưu tiên hơn thằng nào. Thằng nào mới hơn (viết sau trong code) thì apply thằng đó -->
+            <!-- Độ ưu tiên = 0 -->
+            <li>Internal, External - 0</li>
+            
+            <!-- Danh sách này thì có độ ưu tiên cao hơn Internal hoặc External
+            Ai có điểm cao hơn thì css được apply theo thằng đó -->
+
+             <!-- Thằng này có độ ưu tiên cao nhất -->
+            <li>!important - 10000</li>
+            <li>Inline - 1000</li>
+            <li>#id - 100</li>
+            <li>.class - 10</li>
+            <li>tag - 1</li>
+
+            <!-- Khi có cùng CSS giống nhau ví dụ: #heading-id đều có css thì sẽ ưu tiên css mới hơn -->
+            <li>Equal specificity</li>
+
+            <!-- Đây là thằng có độ ưu tiên thấp nhất. Trong css cú pháp sẽ là * {//code} -->
+            <!-- Có thể ghi đè css này một cách dễ dàng -->
+            <li>Universal selector and inherited?</li>
+        </ol>
+    </div>
+</body>
+</html>
