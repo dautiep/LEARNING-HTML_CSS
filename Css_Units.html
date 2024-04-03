@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Units</title>
+    <style>
+        html {
+            font-size: 20px;
+        }
+        .box {
+            width: 50%;
+            height: 100px;
+            background-color: brown;
+        }
+        .box-relative-unit {
+            font-size: 30;
+        }
+        .heading-relative-unit {
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div>
+        <!-- Không bị ảnh hưởng bới một đối tượng nào khác. -->
+        <h1>Absolute Unit: đơn vị tuyệt đối</h1>
+        <ul>
+            <li>px</li>
+        </ul>
+    </div>
+    <div class="box-relative-unit">
+        <!-- Bị ảnh hưởng bới một đối tượng nào đó -->
+        <h1 class="heading-relative-unit">Relative Unit: đơn vị tương đối</h1>
+        <ul>
+            <!-- Phụ thuộc vào thẻ chứa nó -->
+            <li>%</li>
+            <!-- Phụ thuộc vào thẻ html -->
+            <li>rem</li>
+            <!-- Phụ thuộc vào thẻ chứa nó có thuộc tính đó gần nhất -->
+            <li>em</li>
+            <!-- Phụ thuộc vào kích thước của màn hình: vw: kích thước chiều ngang, vh: kích thước chiều dọc -->
+            <li>vw</li>
+            <li>vh</li>
+        </ul>
+    </div>
+</body>
+</html>
